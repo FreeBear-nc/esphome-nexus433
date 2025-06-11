@@ -6,7 +6,7 @@ esp32:
     type: arduino
 
 esphome:
-  name: "nexusdecoder"
+  name: "nexus433"
   platformio_options:
     lib_deps:
       - https://github.com/FreeBear-nc/arduino-nexus433.git
