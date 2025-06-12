@@ -10,7 +10,6 @@ esphome:
   platformio_options:
     lib_deps:
       - https://github.com/FreeBear-nc/arduino-nexus433.git
-    refresh: always
 
 external_components:
   - source:
