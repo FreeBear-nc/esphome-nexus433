@@ -1,7 +1,7 @@
 
 esp32:
   variant: ESP32C3
-  board: lolin_c3_mini
+  board: adafruit_qtpy_esp32c3
   framework:
     type: arduino
 
@@ -10,6 +10,11 @@ esphome:
   platformio_options:
     lib_deps:
       - https://github.com/FreeBear-nc/arduino-nexus433.git
+    # Most other boards will have BUILTIN_LED defined
+    # but not the Adafruit QT Py ESP32-C3.
+    # The ESP32-C3 Super Mini uses gpio08 for both the
+    # builtin LED and the onboard WS2812.
+    build_flags: -DBUILTIN_LED=8 
 
 external_components:
   - source:
@@ -48,5 +53,5 @@ mqtt:
 
 nexus433:
   id: mqttnexus433
-  pin: 6
+  pin: 4
 
