@@ -40,8 +40,7 @@ int generate_payload(void)
         const char* const payload_fmt = "{ "
                 "\"temperature\": %s, "
                 "\"humidity\": %d, "
-                "\"battery\": \"%i\", "
-                "}";
+                "\"battery\": %i }";
 
         const char* const topic_fmt = "nexus433/sensor/%02x%02x/state";
         char str_temp[6];
