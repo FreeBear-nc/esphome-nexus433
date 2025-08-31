@@ -34,7 +34,8 @@ int generate_payload(void)
 
     nexus_data = decode_nexus_data();
 
-    if ((nexus_data_prev.ID == nexus_data.ID) && ((nexus_data.Timestamp - nexus_data_prev.Timestamp) < 800) ) {
+    if ((nexus_data_prev.ID == nexus_data.ID) && (nexus_data.Const == 0x0f) &&
+        ((nexus_data.Timestamp - nexus_data_prev.Timestamp) < 800) ) {
         return -1;
     } else {
         const char* const payload_fmt = "{ "
